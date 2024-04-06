@@ -14,14 +14,16 @@ const imagesArray = ["https://http.cat/503"];
     imagesArray.splice(0, 1, ...imgs);
 })();
 
-export default async function (req /*: http.IncomingMessage*/, res /*: http.ServerResponse*/) {
+export default async function (req /*: http.IncomingMessage*/ , res /*: http.ServerResponse*/ ) {
     const url = new URL("http://localhost" + req.url);
     if (req.url === "/favicon.ico") {
         res.writeHead(404);
         res.end();
         return;
     }
-    const { searchParams } = url;
+    const {
+        searchParams
+    } = url;
     let stringNumber; // 获取id
     const matched = url.pathname.match(/^\/(\d+)\.(?:jpg|jpeg|png|gif|webp)$/);
     if (matched) {
@@ -44,7 +46,10 @@ export default async function (req /*: http.IncomingMessage*/, res /*: http.Serv
             "Access-Control-Allow-Origin": "*",
             "Cache-Control": "no-cache",
         });
-        res.write(JSON.stringify({ id, url: remoteURL }));
+        res.write(JSON.stringify({
+            id,
+            url: remoteURL
+        }));
         res.end();
     } else if (searchParams.has("raw")) {
         console.log(`send raw ${remoteURL}`);
