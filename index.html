@@ -16,6 +16,7 @@
                 "PingFang SC", "Microsoft YaHei", "Source Han Sans SC",
                 "Noto Sans CJK SC", "WenQuanYi Micro Hei", "sans-serif";
             font-size: 16px;
+            background: rgba(51, 51, 51, .3);
         }
 
         * {
@@ -33,7 +34,7 @@
             height: 100vh;
             overflow: hidden;
             background: #a0e5e4;
-            background: url("/api");
+            background: fixed border-box no-repeat url("/api") center/cover;
         }
 
         h1,
@@ -64,7 +65,7 @@
             width: 2rem;
             height: 2rem;
             border-radius: 50%;
-            border: 2px solid #424242;
+            border: 2px solid #ffffff;
             cursor: pointer;
             animation: bounce 2s infinite 2s;
         }
@@ -75,7 +76,7 @@
             transform: rotate(-45deg) translate(0.15rem, 0.15rem);
             width: 0.4rem;
             height: 0.4rem;
-            border: 2px solid #424242;
+            border: 2px solid #ffffff;
             border-width: 0px 0 2px 2px;
         }
 
